@@ -21,7 +21,7 @@
          <script>
              $(()=>{
 
-                    //alert("Hello ");
+                    alert("Hello ");
                     let url = "https://api.thingspeak.com/channels/1458409/feeds.json?results=2"
                     $.getJSON(url)
                     .done(function(data){
