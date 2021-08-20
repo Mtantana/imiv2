@@ -14,25 +14,27 @@
   </head>
   <body>
 
-    <div class="row">
-        <div class="col-4">
-            <iframe src="https://thingspeak.com/channels/1458409/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" frameborder="0"></iframe>
-        </div>
-        <div class="col-4"></div>
-        <div class="col-4"></div>
-    </div>
-
-   
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
   </body>
 
          <script>
-             $(
-                 ()=>{
+             $(()=>{
 
-                    alert("Hello ");
+                    //alert("Hello ");
+                    let url = "https://api.thingspeak.com/channels/1458409/feeds.json?results=2"
+                    $.getJSON(url)
+                    .done(function(data){
+                        //console.log(data);
+                        console.log(data.channel);
+                        let feed  = data.feed;
+                        console.log(feeds);
+                                })
+                    
+                    .fail(function(error){
+
+                    });
+
                  });
         </script>
 
